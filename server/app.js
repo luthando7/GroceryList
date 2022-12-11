@@ -3,13 +3,11 @@
 const express = require('express');
 const app = express();
 
+const shopRoutes = require('./src/routes/shops.route');
+
 const PORT = 3000;
 
-app.get('/', (req, res) => {
-    res.send({
-        message: "Hello there"
-    })
-})
+app.use('/', shopRoutes);
 
 app.listen(PORT, () => {
     console.log(`listening on http://localhost:${PORT}`)
